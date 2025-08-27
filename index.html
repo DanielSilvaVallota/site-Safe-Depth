@@ -9,6 +9,8 @@
     body {
       background: linear-gradient(rgba(16,60,152,0.3), rgba(0,153,204,0.19)), url('generated-image.jpg') no-repeat center center fixed;
       background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
     .container {
       max-width: 960px;
@@ -18,38 +20,128 @@
       border-radius: 12px;
       box-shadow: 0 6px 24px rgba(20, 70, 102, 0.7);
     }
-    header p {
+    h2 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    img {
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+    /* Piscina imagens lado a lado ocupando máximo espaço */
+    .piscina-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .piscina-container img {
+      width: 49%;
+      height: 250px;
+    }
+    /* Vestiário imagens lado a lado */
+    .vestiario-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 10px 0 20px 0;
+    }
+    .vestiario-container img {
+      width: 49%;
+      height: 180px;
+    }
+    /* Equipamentos imagens lado a lado ocupando máximo espaço */
+    .equipamentos-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 10px 0 20px 0;
+    }
+    .equipamentos-container img {
+      width: 49%;
+      height: 180px;
+    }
+    /* Parágrafo final centralizado */
+    .final-text {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: rgba(0, 51, 102, 0.85);
+      margin: 0;
+      padding: 8px 0;
+      border-radius: 0 0 12px 12px;
+    }
+    nav ul li {
+      margin: 0 12px;
+    }
+    nav ul li a {
       color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    nav ul li a[aria-current="page"] {
+      border-bottom: 2px solid #00c8ff;
+      padding-bottom: 2px;
     }
   </style>
 </head>
 <body>
-    <header>
-        <div class="header-flex">
-          <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
-          <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
-        </div>
-    </header>
-      
+  <header>
+    <div class="header-flex">
+      <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
+      <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
+    </div>
+</header>
   <nav>
     <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="pacote.html">Pacote</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="curso.html">Cursos</a></li>
       <li><a href="pousada.html">Pousada</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
       <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="Agenda.html">Agenda</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
+
   <main class="container">
     <section>
-      <h2>Bem-vindo à Safe Depth Mergulho</h2>
-      <p>Somos uma escola de mergulho com foco em aventura, experiência segura e liberdade no mar. Oferecemos cursos de formação para iniciantes, viajantes e amantes do oceano, desde o Discovery até o Open Water, com instrutores certificados e estrutura completa.</p>
+      <h2>Bem-vindo a Safe Depth Mergulho</h2>
+      <p>Seja muito bem-vindo ao universo subaquático! Aqui, o mergulho ganha vida de um jeito descontraído, seguro e inesquecível. Somos uma escola credenciada pela NAUI, referência mundial em qualidade e segurança, e temos orgulho de contar com os melhores instrutores: apaixonados pelo mar, pacientes, experientes e sempre prontos para fazer de cada mergulhador um novo amigo.</p>
+      <p>Nossa estrutura é pensada para quem valoriza conforto e tranquilidade. Oferecemos uma piscina aquecida exclusiva, com um poço de quatro metros de profundidade – perfeita para treinar técnicas e sentir aquela emoção do primeiro mergulho, sempre sob orientação cuidadosa. Do iniciante ao avançado, aqui cada aluno recebe atenção personalizada, equipamentos revisados e muita energia positiva.</p>
+      <p>Prepare-se para aprender no ritmo que você prefere, tirar todas as dúvidas e ter suporte completo desde o primeiro contato até a formação final. Vem viver o mergulho com a gente: conhecimento na superfície, aventura nas profundezas e amizade em cada respirada!</p>
     </section>
+
     <section>
-      <h2>Cursos</h2>
-      <p><strong>Discovery Dive:</strong> Aula prática introdutória para quem quer experimentar mergulho com cilindro, combinando segurança, teoria e prática.</p>
-      <p><strong>Open Water:</strong> Certificação internacional para mergulhos autônomos, com treinamento em técnicas, navegação subaquática e uso de equipamentos.</p>
+      <h2>Estrutura</h2>
+
+      <p><strong>Piscina:</strong> Nossa piscina aquecida é o espaço perfeito para iniciar sua jornada no mergulho. Com profundidade que chega a 4 metros, é ideal para você desenvolver as habilidades essenciais com conforto e segurança, em qualquer época do ano. A temperatura controlada garante uma experiência agradável para todos os alunos, desde iniciantes até avançados.</p>
+      <div class="piscina-container">
+        <img src="piscina.png" alt="piscina" />
+        <img src="poço.png" alt="piscina" />
+      </div>
+
+      <p><strong>Vestiários:</strong> Dispomos de vestiários espaçosos e bem equipados, garantindo praticidade e conforto antes e depois das aulas. Tudo pensado para que você se sinta acolhido em cada momento da sua experiência conosco.</p>
+      <div class="vestiario-container">
+        <img src="vestiario.png" alt="vestiário" />
+      </div>
+
+      <p><strong>Equipamentos:</strong> Nossos equipamentos são modernos, revisados regularmente e ajustados individualmente para cada aluno. Desde máscaras, nadadeiras, coletes equilibradores até reguladores, tudo para garantir seu máximo desempenho e segurança. Usamos apenas itens de marcas reconhecidas no mercado para que o foco seja somente aprender e aproveitar cada mergulho.</p>
+      <div class="equipamentos-container">
+        <img src="respirador.png" alt="respirador" />
+        <img src="nadadeira.png" alt="nadadeira" />
+        <img src="roupas.png" alt="roupas">
+      </div>
+      <div>
+        <p><strong>Depoimentos</strong></p>
+      </div>
+      <p class="final-text">A combinação da estrutura profissional com nossa equipe experiente faz do aprendizado um processo tranquilo, eficiente e muito prazeroso. Venha conhecer de perto!</p>
     </section>
   </main>
 </body>

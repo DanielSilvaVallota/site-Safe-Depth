@@ -19,51 +19,7 @@
       box-shadow: 0 6px 24px rgba(20, 70, 102, 0.7);
       position: relative;
     }
-    
-    .header-flex {
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      margin: 0 auto 0 auto;
-      width: 100%;
-      min-height: 84px;
-      box-sizing: border-box;
-      /* sem padding, sem background */
-    }
-    .logo-left {
-  max-height: 160px;
-  max-width: 180px;
-  margin-left: 230px;
-  margin-right: 18px;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px #1689ca18;
-  display: block;
-}
-.logo-right {
-  max-height: 60px;
-  max-width: 220px;
-  object-fit: contain;
-  margin-right: 230px;
-  margin-left: 18px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 0 2px 8px #1689ca0b;
-  display: block;
-}
-    @media (max-width: 900px){
-      .header-flex {min-height: 48px;}
-      .logo-left {max-height:46px;max-width:80px;margin-left:4px;margin-right:8px;}
-      .logo-right {max-height:30px;max-width:90px;margin-right:4px;margin-left:8px;}
-    }
-    @media (max-width: 600px){
-      .container{padding:10px 2px;}
-      .header-flex {min-height:34px;}
-      .logo-left {max-width:64px;max-height:28px;}
-      .logo-right {max-width:64px;max-height:20px;}
-    }
+    header p { color: #fff; }
     .agenda-bloco {
       background: #fff;
       border-radius: 10px;
@@ -117,6 +73,7 @@
       margin-bottom:3px;
       color: #222;
     }
+    /* MODAL DE DETALHES */
     .agenda-modal {
       display: none;
       position: absolute;
@@ -132,8 +89,13 @@
       overflow-y: auto;
       animation: detalhesExpandir 0.18s;
     }
-    .agenda-modal.aberta { display: block; }
-    @keyframes detalhesExpandir {from{opacity:0;transform:scale(0.97);}to{opacity:1;transform:scale(1);}}
+    .agenda-modal.aberta {
+      display: block;
+    }
+    @keyframes detalhesExpandir {
+      from { opacity: 0; transform: scale(0.97);}
+      to   { opacity: 1; transform: scale(1);}
+    }
     .agenda-modal-close {
       position: absolute;
       top: 22px; right: 36px;
@@ -148,8 +110,9 @@
       box-shadow: 0 2px 8px #1689ca22;
       transition: background 0.24s;
     }
+    .agenda-modal-close:hover {background: #144666;}
     .agenda-modal-img {
-      display:block;
+
       max-width: 320px;
       max-height: 200px;
       border-radius:8px;
@@ -170,69 +133,296 @@
       margin-bottom: 8px;
       text-align: center;
     }
-    .agenda-modal-data {font-weight: bold;color: #073963;margin-bottom: 13px;font-size: 1.12em;display: block;text-align: center;}
-    .agenda-modal-descricao {margin-bottom: 14px;font-size:1.15em;line-height:1.7;color:#222;text-align: center;max-width: 700px;margin-left: auto;margin-right: auto;}
-    .agenda-modal-footer {display: flex;flex-direction: column;align-items: center;margin-top: 30px;width: 100%;}
-    .agenda-modal-valor {font-size:1.25em;font-weight:700;color:#073963;background:#f2f7fa;padding:14px 28px;border-radius:9px;box-shadow:0 2px 8px #1689ca16;display:inline-block;text-align: center;margin-bottom: 16px;margin-left: auto;margin-right: auto;width:fit-content;}
-    .agenda-modal-btn {background: #25d366;color: #fff;border: none;font-weight: 700;border-radius: 30px;padding: 15px 38px;cursor: pointer;font-size: 1.12em;transition: background 0.22s;text-decoration: none;display: inline-block;margin-top:0;margin-bottom: 4px;text-align: center;margin-left: auto;margin-right: auto;}
-    .agenda-modal-btn:hover { background: #1ebe57;}
-    .lightbox {display: none;position: fixed;top:0; left:0; width:100vw; height:100vh;background: rgba(22,40,72,0.90);z-index: 10010;justify-content: center;align-items: center;}
-    .lightbox.aberta {display: flex !important;animation: lightboxIn 0.2s;}
-    @keyframes lightboxIn {from { opacity:0; }to   { opacity:1; }}
-    .lightbox-img {max-width: 80vw;max-height: 85vh;border-radius: 16px;box-shadow: 0 8px 32px #1689ca99;background: #fff;object-fit: contain;border: 2px solid #25d366;}
-    .lightbox-close {position: absolute;top: 24px; right: 46px;background: #144666;color: #fff;border: none;border-radius: 24px;font-size: 2em;width: 48px; height: 48px;cursor: pointer;z-index: 10;box-shadow: 0 2px 12px #1689ca77;transition: background 0.18s;}
+    .agenda-modal-data {
+      font-weight: bold;
+      color: #073963;
+      margin-bottom: 13px;
+      font-size: 1.12em;
+      display: block;
+      text-align: center;
+    }
+    .agenda-modal-descricao {
+      margin-bottom: 14px;
+      font-size:1.15em;
+      line-height:1.7;
+      color:#222;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .agenda-modal-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      width: 100%;
+    }
+    .agenda-modal-valor {
+      font-size:1.25em;
+      font-weight:700;
+      color:#073963;
+      background:#f2f7fa;
+      padding:14px 28px;
+      border-radius:9px;
+      box-shadow:0 2px 8px #1689ca16;
+      display:inline-block;
+      text-align: center;
+      margin-bottom: 16px;
+      margin-left: auto;
+      margin-right: auto;
+      width:fit-content;
+    }
+    .agenda-modal-btn {
+      background: #25d366;
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      border-radius: 30px;
+      padding: 15px 38px;
+      cursor: pointer;
+      font-size: 1.12em;
+      transition: background 0.22s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top:0;
+      margin-bottom: 4px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .agenda-modal-btn:hover { background: #1ebe57; }
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top:0; left:0; width:100vw; height:100vh;
+      background: rgba(22,40,72,0.90);
+      z-index: 10010;
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.aberta {
+      display: flex !important;
+      animation: lightboxIn 0.2s;
+    }
+    @keyframes lightboxIn {
+      from { opacity:0; }
+      to   { opacity:1; }
+    }
+    .lightbox-img {
+      max-width: 80vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #1689ca99;
+      background: #fff;
+      object-fit: contain;
+      border: 2px solid #25d366;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 46px;
+      background: #144666;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-size: 2em;
+      width: 48px; height: 48px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 12px #1689ca77;
+      transition: background 0.18s;
+    }
     .lightbox-close:hover {background: #25d366;}
     @media (max-width:600px){
       .container{padding:10px 2px;}
-      .header-flex {min-height:34px;}
-      .logo-left {max-width:64px;max-height:28px;}
-      .logo-right {max-width:64px;max-height:20px;}
+      .agenda-bloco{flex-direction:column;gap:10px;padding:10px 5px;}
+      .agenda-img{max-width:98vw;max-height:88px;}
+      .agenda-data{min-width:inherit;font-size:1.11em;}
+      .agenda-modal{padding:14px 2vw;}
+      .agenda-modal-img{max-width:98vw;}
+      .agenda-modal-close{top:13px;right:7px;}
+      .agenda-modal-valor{padding:8px 4px;font-size:1.05em;}
+      .agenda-modal-btn{padding:12px 12vw;}
+      .agenda-modal-descricao {font-size:1em;}
+      .lightbox-close {top:7px;right:6px;}
+      .lightbox-img {max-width:99vw;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-flex">
-      <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
-      <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
-    </div>
-  </header>
+    <header>
+        <div class="header-flex">
+          <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
+          <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
+        </div>
+    </header>
+      
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="pousada.html">Pousada</a></li>
-      <li><a href="pacote.html">Pacote</a></li>
       <li><a href="produtos.html">Produtos</a></li>
-      <li><a href="agenda.html" aria-current="page">Agenda</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
   <main class="container">
     <h2>Próximos eventos e viagens</h2>
-    <!-- Bloco exemplo -->
+    <!-- Bloco 1 -->
     <div class="agenda-bloco" onclick="abrirAgendaModal(0)">
       <img src="ilha-grande.jpg" alt="Ilha Grande" class="agenda-img">
-      <div class="agenda-data">23-25 Setembro</div>
+      <div class="agenda-data">11 - 13 Setembro</div>
       <div>
-        <div class="agenda-titulo">Expedição Ilha Grande</div>
-        <div class="agenda-descricao">Curso Discovery e Open Water, travessia de barco, hospedagem com pensão completa e quatro pontos de mergulho.</div>
+        <div class="agenda-titulo">Pacote Ilha Grande</div>
+        <div class="agenda-descricao">Pensão completa - CONFIRA</div>
       </div>
     </div>
-    <!-- Modal exemplo -->
+    <!-- Modal 1 -->
     <div class="agenda-modal" id="agenda-modal-0">
       <button class="agenda-modal-close" onclick="fecharAgendaModal(0)">×</button>
       <img src="ilha-grande.jpg" alt="Ilha Grande" class="agenda-modal-img" onclick="ampliarFoto('ilha-grande.jpg')">
-      <div class="agenda-modal-titulo">Expedição Ilha Grande</div>
-      <span class="agenda-modal-data">23-25 Setembro</span>
+      <div class="agenda-modal-titulo">Pacote Ilha Grande</div>
+      <span class="agenda-modal-data"> De 11 a 13 de Setembro.</span>
       <div class="agenda-modal-descricao">
-        Pacote inclui ônibus leito SP-RJ, travessia de barco para Ilha Grande, três noites de hospedagem com pensão completa, curso Discovery ou Open Water, mergulho em naufrágios e lajes históricas. <br>
-        Equipamentos e estrutura profissional, instrutores credenciados e apoio total durante toda a viagem.
+        A Ilha Grande é um dos melhores locais para mergulho no Rio de Janeiro. 
+
+ 
+
+Com dezenas de locais excepcionais para mergulhar. No leito do oceano, naufrágios espetaculares, lajes e costões disputam a atenção dos mergulhadores. Na ilha você pode escolher o categoria de mergulho, quando se trata de mergulho autônomo existe além das belezas naturais, alguns naufrágios de navio e um helicóptero como atrações.
+
+​
+
+Um dos melhores roteiros de mergulho no Brasil, as águas claras com uma temperatura agradável, faz com que o mergulho é praticado o ano inteiro. Na Ilha se concentra uma variedade enorme de espécies marinha, onde se pode contemplar belas paisagens e os mais belos peixes do Brasil.
+
+ 
+
+Embaixo d'água há um mundo colorido de peixes como agulhas, sargentinhos, garoupas, voadores e outros animais como polvos, camarões, estrelas-do-mar, lulinhas, golfinhos, tartarugas e raias vivendo entre pedras e corais que formam um verdadeiro jardim subaquático.
+
+ 
+
+A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12 metros, e profundidade entre 8 e 20 metros, fatores que permitem que se observe as inúmeras espécies de peixes, estrelas do mar, polvos, águas-vivas e outros. <br>
+        <p>Pacote inclui ônibus leito equipado com Wifi, Ar condicionado e banheiro, travessia de barco para Ilha Grande, duas noites de hospedagem com pensão completa (café da manhã, almoço e jantar exceto bebidas).
+          <p>4 mergulhos (dois no sábado e dois no domingo), mergulho noturno opcional.</p>
+        Todo equipamento incluso e estrutura profissional, instrutores credenciados e apoio total durante toda a viagem.</p>
       </div>
       <div class="agenda-modal-footer">
         <div class="agenda-modal-valor">
           Valor: R$ 3.890,00 <br>em até 6x sem juros
         </div>
         <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero reservar Ilha Grande por R$ 3.890,00" target="_blank">Reservar pelo WhatsApp</a>
+      </div>
+    </div>
+    <!-- Bloco 2 -->
+    <div class="agenda-bloco" onclick="abrirAgendaModal(1)">
+      <img src="lajedesantos1.jpg" alt="Laje de Santos" class="agenda-img">
+      <div class="agenda-data">Sem data confirmada.</div>
+      <div>
+        <div class="agenda-titulo">Laje de Santos - SP </div>
+        <div class="agenda-descricao">Parque Estadual Marinho de Laje de Santos</div>
+      </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="agenda-modal" id="agenda-modal-1">
+      <button class="agenda-modal-close" onclick="fecharAgendaModal(1)">×</button>
+      <img src="lajedesantos1.jpg" alt="LAje de Santos - SP" class="agenda-modal-img" onclick="ampliarFoto('lajedesantos1.jpg')">
+      <div class="agenda-modal-titulo">Laje de Santos - SP</div>
+      <span class="agenda-modal-data"></span>
+      <div class="agenda-modal-descricao">
+        Um dos melhores pontos de mergulho do litoral Brasileiro, a Laje de Santos esta situada a 42 km da costa, em frete à cidade de Santos, fazendo parte do Parque Estadual Marinho da Laje de Santos, é o primeiro parque marinho dentre as Unidades de Conservação do Estado de São Paulo e tem como objetivo a proteção do ambiente marinho. 
+
+ 
+
+        É grande a concentração de cardumes de peixes nesta Unidade de Conservação é, provavelmente, o principal fator que leva à ocorrência das Baleias de Bryde avistadas durante o trajeto, bem como grupos de golfinhos que dão um show à parte.
+        
+         
+        
+        Os principais pontos de mergulho são: Portinho , Naufrágio da Moréia, Piscinas, Parcel das Âncoras, Paredão da Face Sul e Boca da Baleia. 
+        
+         
+        
+        Para chegar até a Laje de Santos leva aproximadamente 1h30 de lancha, com saída do porto de São Vicente.  
+        
+         </div>
+      <div class="agenda-modal-footer">
+        <div class="agenda-modal-valor">
+          Valor: R$ 1.095,00 <br>em até 6x sem juros <br><br> Se necessário, a locação de cada equipamento custa R$ 90,00.
+        </div>
+        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero viajar para Laje de Santos por R$ 1.095,00" target="_blank">Reservar pelo WhatsApp</a>
+      </div>
+    </div>
+    <!-- Bloco 3 -->
+    <div class="agenda-bloco" onclick="abrirAgendaModal(2)">
+      <img src="alcatrazes.avif" alt="Alcatrazes" class="agenda-img">
+      
+      <div class="agenda-data">4 - 5 Outubro.</div>
+      <div>
+        <div class="agenda-titulo">Arquipélago de Alcatrazes e Ilha Vitória</div>
+        <div class="agenda-descricao">Estão protegidas em Alcatrazes, 259 espécies de peixes.</div>
+      </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="agenda-modal" id="agenda-modal-2">
+      <button class="agenda-modal-close" onclick="fecharAgendaModal(2)">x</button>
+      <div class="nova">
+        <img src="alcatrazes.avif" alt="Alcatrazes" class="agenda-modal-img" onclick="ampliarFoto('alcatrazes.avif')">
+        <img src="ilhavitoria.jpg" alt="ilha vitória" class="agenda-modal-img" onclick="ampliarFoto('ilhavitoria.jpg')">
+      </div>
+      <div class="agenda-modal-titulo">Ilha de Alcatrazes e Ilha Vitória</div>
+      <span class="agenda-modal-data"></span>
+      <div class="agenda-modal-descricao">
+        O arquipélago de Alcatrazes é um verdadeiro santuário natural no litoral norte de São Paulo, formado por cinco ilhas principais e quatro ilhotas menores, sendo a Ilha de Alcatrazes e a Ilha da Sapata as mais emblemáticas. A Ilha de Alcatrazes possui 2,5 km de extensão e impressiona pelo relevo montanhoso e paredões rochosos que atraem aves marinhas em grandes ninhais. Protegidas por unidades de conservação, as ilhas são refúgio para cerca de 1.300 espécies de fauna e flora, incluindo orquídeas, bromélias e mais de 100 espécies de aves.
+
+        A ilha Vitória complementa essa riqueza, mantendo vegetação nativa e abrigando importante diversidade animal. No entorno das ilhas, estão catalogadas mais de 259 espécies de peixes, algumas ameaçadas de extinção como a garoupa, tubarão-martelo e raia-manta. As águas claras permitem avistar tartarugas, golfinhos e até baleias-jubarte. Por décadas, a visitação foi restrita pela Marinha, sendo liberada parcialmente para mergulho recreativo apenas nos últimos anos, sempre sob rígido controle ambiental.
+        
+        A beleza e a biodiversidade das Alcatrazes fazem do arquipélago um laboratório vivo para pesquisa científica, educação ambiental e ecoturismo sustentável, destacando-se nacionalmente pela proteção integral da vida selvagem.
+        <br><p></p>É simplesmente um mergulho sensacional, que acaba de ser autorizado a visitação.
+
+          <p>Incluso no pacote <br><p></p>
+        <p>Deslocamento de Barco >> Lanche Abordo
+
+        >> Estrutura de Mergulho (lastro e cilindro)
+        
+        >> 2 Pontos de Mergulho
+        
+        >> Equipamentos
+        
+        >> Churrasco de confraternização na volta </p></p
+        
+      </div>
+      <div class="agenda-modal-footer">
+        <div class="agenda-modal-valor">
+          <p></p>
+          Valor da Ilha Alcatrazes e Ilha Vitória R$ 2.980,00 <br>em até 8x sem juros <br><p></p><br>Valor de Alcatrazes R$ 1.830,00 <br>em até 8x sem juros <br><p></p>Se necessário, a locação de cada equipamento custa R$ 90,00.
+        </div>
+        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero o pacote Ilha Alcatrazes e Vitória  por R$ 2.980,00" target="_blank">Reservar pelo WhatsApp</a>
+      </div>
+    </div>
+    <!-- Bloco 4 -->
+    <div class="agenda-bloco" onclick="abrirAgendaModal(3)">
+      <img src="piscina.jpg" alt="Piscina" class="agenda-img">
+      <div class="agenda-data">Todo mês</div>
+      <div>
+        <div class="agenda-titulo">Treinamento em piscina</div>
+        <div class="agenda-descricao">Sessão de técnicas, teste de equipamentos e prática de habilidades para todos os alunos e interessados.</div>
+      </div>
+    </div>
+    <!-- Modal 4 -->
+    <div class="agenda-modal" id="agenda-modal-3">
+      <button class="agenda-modal-close" onclick="fecharAgendaModal(3)">×</button>
+      <img src="piscina.jpg" alt="Piscina" class="agenda-modal-img" onclick="ampliarFoto('piscina.jpg')">
+      <div class="agenda-modal-titulo">Treinamento em piscina</div>
+      <span class="agenda-modal-data">Todo mês</span>
+      <div class="agenda-modal-descricao">
+        Sessão prática mensal para alunos e interessados, inclui uso de equipamentos, orientação de instrutores, dinâmica de resgate, manutenção e técnicas avançadas.<br>
+        Valor para não alunos: R$ 140,00 por sessão.<br>
+        Alunos ativos: incluso no curso vigente!
+      </div>
+      <div class="agenda-modal-footer">
+        <div class="agenda-modal-valor">
+          Valor: R$ 140,00 <br>por sessão (não aluno)
+        </div>
+        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero agendar o treino de piscina por R$ 140,00" target="_blank">Agendar pelo WhatsApp</a>
       </div>
     </div>
     <!-- LIGHTBOX -->
@@ -265,6 +455,7 @@
       modal.classList.remove('aberta');
       document.getElementById('lightbox-img').src = '';
     }
+    // Fecha lightbox ao clicar fora da imagem
     document.getElementById('lightbox-modal').addEventListener('click', function(e){
       if(e.target === this){ fecharLightbox(); }
     });
