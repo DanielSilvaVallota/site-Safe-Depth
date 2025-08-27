@@ -1,0 +1,208 @@
+/* styles.css */
+:root {
+    --azul-destaque: #1689ca;
+    --azul-fundo: rgba(16, 60, 152, 0.96);
+    --azul-header: rgba(0, 40, 90, 0.82);
+    --branco-transparente: rgba(255, 255, 255, 0.96);
+    --texto-principal: #073963;
+    --fundo-body: linear-gradient(rgba(16,60,152,0.7), rgba(0,153,204,0.5));
+    --fonte-base: 'Segoe UI', Arial, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--fonte-base);
+    margin: 0;
+    color: var(--texto-principal);
+    background: var(--fundo-body), url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .header-flex {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto 0 auto;
+    width: 100%;
+    min-height: 84px;
+    box-sizing: border-box;
+  }
+  .logo-left {
+    max-height: 160px;
+    max-width: 180px;
+    margin-left: 230px;
+    margin-right: 18px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #1689ca18;
+    display: block;
+  }
+  .logo-right {
+    max-height: 60px;
+    max-width: 220px;
+    object-fit: contain;
+    margin-right: 230px;
+    margin-left: 18px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 8px #1689ca0b;
+    display: block;
+  }
+  @media (max-width: 900px){
+    .header-flex {min-height: 48px;}
+    .logo-left {max-height:46px;max-width:80px;margin-left:4px;margin-right:8px;}
+    .logo-right {max-height:30px;max-width:90px;margin-right:4px;margin-left:8px;}
+  }
+  @media (max-width: 600px){
+    .header-flex {min-height:34px;}
+    .logo-left {max-width:64px;max-height:28px;}
+    .logo-right {max-width:64px;max-height:20px;}
+  }
+  
+  
+  nav {
+    background: var(--azul-fundo);
+    box-shadow: 0 2px 8px #2223;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  nav ul {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 12px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 15px 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 6px;
+  }
+  
+  nav a:hover,
+  nav a:focus,
+  nav a[aria-current="page"] {
+    background-color: white;
+    color: var(--azul-destaque);
+  
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: var(--branco-transparente);
+    padding: 40px 32px 32px 32px;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(20, 70, 102, 0.7);
+  }
+  
+  h1, h2, h3 {
+    margin-top: 0;
+    color: var(--azul-destaque);
+  }
+  
+  h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-weight: 700;
+  }
+  
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--texto-principal);
+  }
+  
+  ul {
+    padding-left: 18px;
+    margin-bottom: 1rem;
+    color: var(--azul-destaque);
+    font-weight: 600;
+  }
+
+  
+  a.whatsapp {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    margin-top: 16px;
+  }
+  
+  a.whatsapp:hover {
+    background-color: #1ebe57;
+  }
+  
+  a.email {
+    color: var(--azul-destaque);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+    margin-left: 16px;
+  }
+  
+  a.email:hover {
+    border-color: var(--azul-destaque);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(22, 137, 202, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav li {
+      margin: 0;
+    }
+  
+    nav a {
+      padding: 12px 15px;
+      font-size: 18px;
+    }
+  
+    .container {
+      margin: 24px 12px;
+      padding: 24px 20px;
+    }
+  }
+  

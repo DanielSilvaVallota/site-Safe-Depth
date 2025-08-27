@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos | Safe Depth Mergulho</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(rgba(16,60,152,0.3), rgba(0,153,204,0.19)), url('generated-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.50);
+      padding: 40px 32px 32px 32px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(20, 70, 102, 0.7);
+      min-height: 650px;
+      position: relative;
+    }
+    header p { color: #fff; }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 32px;
+      position: relative;
+    }
+    .produto-card {
+      background: rgba(255,255,255,0.87);
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 3px 16px rgba(22,137,202,0.10);
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      padding: 24px 16px 18px 16px;
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+    .produto-card:hover {
+      box-shadow: 0 4px 22px rgba(22,137,202,0.18);
+    }
+    .produto-img {
+      max-width: 100%;
+      max-height: 160px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #1689ca22;
+      background: #f6f9fa;
+      object-fit: contain;
+    }
+    .produto-nome {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #073963;
+      margin-bottom: 10px;
+    }
+    .modal-detalhes {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 460px;
+      background: #fff;
+      box-shadow: 0 4px 32px #1689ca33;
+      border-radius: 16px;
+      z-index: 1000;
+      padding: 40px 32px 36px 32px;
+      text-align: left;
+      overflow-y: auto;
+      animation: detalhesExpandir 0.20s;
+    }
+    .modal-detalhes.aberta {
+      display: block;
+    }
+    @keyframes detalhesExpandir {
+      from { opacity: 0; transform: scale(0.97);}
+      to   { opacity: 1; transform: scale(1);}
+    }
+    .modal-detalhes h3 {
+      color: #1689ca;
+      margin-bottom: 8px;
+      font-size: 1.3em;
+      font-weight: 900;
+    }
+    .modal-detalhes .conteudo-expandido {
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+    }
+    .modal-detalhes p {
+      margin-bottom: 12px;
+      font-size:1.16em;
+      line-height:1.7;
+    }
+    .produto-close {
+      position: absolute;
+      top: 18px; right: 22px;
+      background: #1689ca;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-size: 1.5em;
+      width: 38px; height: 38px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px #1689ca22;
+      transition: background 0.24s;
+    }
+    .produto-close:hover {background: #144666;}
+    .produto-fotos {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin: 26px 0 34px 0;
+      flex-wrap: wrap;
+    }
+    .produto-fotos img {
+      max-width: 220px;
+      max-height: 160px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #1689ca22;
+      object-fit: contain;
+      background: #f6f9fa;
+      cursor: pointer;
+      transition: box-shadow 0.15s;
+    }
+    .produto-fotos img:hover {box-shadow: 0 6px 22px #1689ca44;}
+    .produto-btn {
+      background: #25d366;
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      border-radius: 30px;
+      padding: 12px 30px;
+      cursor: pointer;
+      margin-top: 16px;
+      margin-bottom:14px;
+      font-size: 1.13em;
+      transition: background 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .produto-btn:hover { background: #1ebe57; }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top:0; left:0; width:100vw; height:100vh;
+      background: rgba(22,40,72,0.90);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.aberta {
+      display: flex !important;
+      animation: lightboxIn 0.2s;
+    }
+    @keyframes lightboxIn {
+      from { opacity:0; }
+      to   { opacity:1; }
+    }
+    .lightbox-img {
+      max-width: 80vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #1689ca99;
+      background: #fff;
+      object-fit: contain;
+      border: 2px solid #25d366;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 46px;
+      background: #144666;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-size: 2em;
+      width: 48px; height: 48px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 12px #1689ca77;
+      transition: background 0.18s;
+    }
+    .lightbox-close:hover {background: #25d366;}
+    @media (max-width: 900px) {
+      .produtos-grid {grid-template-columns: repeat(2, 1fr);}
+      .modal-detalhes {padding: 20px 2vw;}
+      .produto-fotos img {max-width:120px;max-height:80px;}
+      .produto-close {top:10px;right:10px;}
+      .lightbox-close {top:13px;right:13px;}
+    }
+    @media (max-width: 600px) {
+      .produtos-grid {grid-template-columns: 1fr;}
+      .container {padding:12px 5px;}
+      .modal-detalhes {padding:8px 2vw;}
+      .produto-fotos img {max-width:90px;max-height:80px;}
+      .produto-close {top:7px;right:4px;}
+      .lightbox-close {top:7px;right:6px;}
+      .lightbox-img {max-width:99vw;}
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+          <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
+          <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
+        </div>
+    </header>
+      
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pousada.html">Pousada</a></li>
+      <li><a href="pacote.html">Pacote</a></li>
+      <li><a href="produtos.html" aria-current="page">Produtos</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h2>Catálogo de Produtos</h2>
+    <div class="produtos-grid">
+      <!-- PRODUTO DE EXEMPLO -->
+      <div class="produto-card" onclick="abrirDetalhes(0)">
+        <img src="mascara.jpg" alt="Máscara Vision Pro" class="produto-img">
+        <div class="produto-nome">Máscara Vision Pro</div>
+      </div>
+      <div class="modal-detalhes" id="detalhes-0">
+        <button class="produto-close" onclick="fecharDetalhes(event,0)">×</button>
+        <h3>Máscara Vision Pro</h3>
+        <div class="produto-fotos">
+          <img src="mascara.jpg" alt="Máscara Vision Pro" onclick="ampliarFoto('mascara.jpg')">
+          <img src="mascara2.jpg" alt="Máscara Vision Pro lateral" onclick="ampliarFoto('mascara2.jpg')">
+          <img src="mascara3.jpg" alt="Máscara Vision Pro uso" onclick="ampliarFoto('mascara3.jpg')">
+        </div>
+        <div class="conteudo-expandido">
+          <p>Alta visibilidade e vedação perfeita, silicone premium, ideal para águas claras e profundas. Regulagem fácil.<br>
+          Permite uso prolongado sem incômodo, faixa ajustável universal.<br>
+          Ótima alternativa para quem busca conforto e máxima segurança em cada mergulho.<br>
+          Testado por instrutores experientes em profundidades de até 35 metros.<br>
+          Disponível nas cores azul, preto e transparente.<br>
+          Recomendada para iniciantes, instrutores e mergulhadores avançados.</p>
+          <p><strong>Valor:</strong> R$ 500,00</p>
+          <a class="produto-btn" href="https://wa.me/5511999999999?text=Quero comprar a Máscara Vision Pro por R$ 320,00" target="_blank">Comprar pelo WhatsApp</a>
+        </div>
+      </div>
+      <!-- LIGHTBOX para ampliar imagem -->
+      <div class="lightbox" id="lightbox-modal">
+        <button class="lightbox-close" onclick="fecharLightbox()">×</button>
+        <img src="" alt="Foto ampliada" id="lightbox-img" class="lightbox-img">
+      </div>
+    </div>
+    <script>
+      function abrirDetalhes(ind) {
+        document.querySelectorAll('.modal-detalhes').forEach((el) => {
+          el.classList.remove('aberta');
+        });
+        const detalhar = document.getElementById('detalhes-' + ind);
+        if(detalhar) detalhar.classList.add('aberta');
+      }
+      function fecharDetalhes(e, ind) {
+        e.stopPropagation();
+        document.getElementById('detalhes-' + ind).classList.remove('aberta');
+      }
+      document.querySelectorAll('.produto-card').forEach(function(card, i){
+        card.addEventListener('click', function(e){
+          abrirDetalhes(i);
+        });
+      });
+      // Ampliação da foto (lightbox)
+      function ampliarFoto(src){
+        var modal = document.getElementById('lightbox-modal');
+        var img = document.getElementById('lightbox-img');
+        img.src = src;
+        modal.classList.add('aberta');
+      }
+      function fecharLightbox(){
+        var modal = document.getElementById('lightbox-modal');
+        modal.classList.remove('aberta');
+        document.getElementById('lightbox-img').src = '';
+      }
+      // Fecha lightbox ao clicar no fundo escuro
+      document.getElementById('lightbox-modal').addEventListener('click', function(e){
+        if(e.target === this){ fecharLightbox(); }
+      });
+    </script>
+  </main>
+</body>
+</html>

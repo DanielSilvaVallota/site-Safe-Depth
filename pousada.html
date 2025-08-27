@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pousada | Safe Depth Mergulho</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: linear-gradient(rgba(16,60,152,0.3), rgba(0,153,204,0.19)), url('generated-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.50);
+      padding: 40px 32px 32px 32px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(20, 70, 102, 0.7);
+    }
+    
+    header p { color: #fff; }
+    .carrossel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin: 24px auto 24px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px #1689ca33;
+      background: #fff;
+    }
+    .carrossel-imagens {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+    .carrossel-imagens img {
+      width: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 10px;
+      max-height: 350px;
+    }
+    .carrossel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(22,137,202,0.8);
+      color: #fff;
+      border: none;
+      border-radius: 36px;
+      width: 46px;
+      height: 46px;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1;
+      box-shadow: 0 2px 8px #1689ca33;
+      user-select: none;
+    }
+    .carrossel-btn.esq { left: 10px; }
+    .carrossel-btn.dir { right: 10px; }
+    .carrossel-dots {
+      text-align: center;
+      margin-top: 14px;
+    }
+    .carrossel-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 3px;
+      border-radius: 50%;
+      background: #1689ca;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+    .carrossel-dot.active {
+      opacity: 1;
+      background: #25d366;
+    }
+    @media (max-width: 700px) {
+      .carrossel-wrapper {max-width: 98vw;}
+      .carrossel-imagens img {max-height: 180px;}
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+          <img src="logo-mergulho1.jpg" alt="Safe Depth Mergulho" class="logo-left" />
+          <img src="2015_NAUI_Logo_Member.cor.jpg" alt="NAUI Member" class="logo-right" />
+        </div>
+      </header>
+      
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pousada.html" aria-current="page">Pousada</a></li>
+      <li><a href="pacote.html">Pacote</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h2>Pousada Recanto dos Lima</h2>
+    <!-- Carrossel de imagens -->
+    <div class="carrossel-wrapper">
+      <button class="carrossel-btn esq" onclick="mudarCarrossel(-1)">&#8249;</button>
+      <div class="carrossel-imagens" id="carrosselImagens">
+        <img src="foto1.jpg" alt="Pousada imagem 1">
+        <img src="foto2.jpg" alt="Pousada imagem 2">
+        <img src="foto3.jpg" alt="Pousada imagem 3">
+        <img src="foto4.jpg" alt="Pousada imagem 4">
+        <img src="foto5.jpg" alt="Pousada imagem 5">
+        <img src="foto6.jpg" alt="Pousada imagem 6">
+        <img src="foto7.jpg" alt="Pousada imagem 7">
+        <img src="foto8.jpg" alt="Pousada imagem 8">
+      </div>
+      <button class="carrossel-btn dir" onclick="mudarCarrossel(1)">&#8250;</button>
+      <div class="carrossel-dots" id="carrosselDots"></div>
+    </div>
+    <p>Hospedagem perfeita em Ilha Grande para relaxar após o mergulho. Piscina, jardim, café da manhã típico e atendimento personalizado.</p>
+    <p>Ambientes acolhedores, estrutura completa e localização privilegiada garantem conforto e tranquilidade para o seu descanso entre mergulhos.</p>
+    <p><strong>Reserve já e viva a melhor experiência na Ilha Grande!</strong></p>
+  </main>
+  <script>
+    // Carrossel JS
+    let posAtual = 0;
+    const imgs = document.querySelectorAll('#carrosselImagens img');
+    const carrosselImagens = document.getElementById('carrosselImagens');
+    const carrosselDots = document.getElementById('carrosselDots');
+    function mostrarCarrossel(indice) {
+      posAtual = (indice + imgs.length) % imgs.length;
+      carrosselImagens.style.transform = 'translateX(-' + (posAtual * 100) + '%)';
+      carrosselDots.innerHTML = '';
+      for (let i = 0; i < imgs.length; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'carrossel-dot' + (i === posAtual ? ' active' : '');
+        dot.onclick = () => mostrarCarrossel(i);
+        carrosselDots.appendChild(dot);
+      }
+    }
+    function mudarCarrossel(delta) {
+      mostrarCarrossel(posAtual + delta);
+    }
+    // Inicializar
+    mostrarCarrossel(0);
+  </script>
+</body>
+</html>
