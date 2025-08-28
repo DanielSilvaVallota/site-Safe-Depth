@@ -233,6 +233,27 @@
       box-shadow: 0 2px 12px #1689ca77;
       transition: background 0.18s;
     }
+
+    footer {
+      display: flex;
+      height: 50px;
+      text-align: center;
+      justify-content: center;
+      margin-top: 150px;
+      background-color: #fff;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0,153,204,0.19))
+    }
+
+  div.rodape {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  p.copy{
+    color: #fff;
+    margin: auto;
+  }
     .lightbox-close:hover {background: #25d366;}
     @media (max-width:600px){
       .container{padding:10px 2px;}
@@ -246,7 +267,11 @@
       .agenda-modal-btn{padding:12px 12vw;}
       .agenda-modal-descricao {font-size:1em;}
       .lightbox-close {top:7px;right:6px;}
-      .lightbox-img {max-width:99vw;}
+      .lightbox-img {max-width:99vw;
+  }
+
+  
+
     }
   </style>
 </head>
@@ -261,14 +286,15 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
       <li><a href="pousada.html">Pousada</a></li>
+      <li><a href="agenda.html"aria-current="page" >Agenda </a></li>
       <li><a href="produtos.html">Produtos</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
   <main class="container">
-    <h2>Próximos eventos e viagens</h2>
+    <h2 class="proximo-evento">Próximos eventos e viagens</h2>
     <!-- Bloco 1 -->
     <div class="agenda-bloco" onclick="abrirAgendaModal(0)">
       <img src="ilha-grande.jpg" alt="Ilha Grande" class="agenda-img">
@@ -281,7 +307,9 @@
     <!-- Modal 1 -->
     <div class="agenda-modal" id="agenda-modal-0">
       <button class="agenda-modal-close" onclick="fecharAgendaModal(0)">×</button>
+    <div class="ilhagrande">
       <img src="ilha-grande.jpg" alt="Ilha Grande" class="agenda-modal-img" onclick="ampliarFoto('ilha-grande.jpg')">
+    </div>
       <div class="agenda-modal-titulo">Pacote Ilha Grande</div>
       <span class="agenda-modal-data"> De 11 a 13 de Setembro.</span>
       <div class="agenda-modal-descricao">
@@ -310,7 +338,7 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
         <div class="agenda-modal-valor">
           Valor: R$ 3.890,00 <br>em até 6x sem juros
         </div>
-        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero reservar Ilha Grande por R$ 3.890,00" target="_blank">Reservar pelo WhatsApp</a>
+        <a class="agenda-modal-btn" href="https://wa.me/5511984473691?text=Quero reservar Ilha Grande por R$ 3.890,00" target="_blank">Reservar pelo WhatsApp</a>
       </div>
     </div>
     <!-- Bloco 2 -->
@@ -319,14 +347,16 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
       <div class="agenda-data">Sem data confirmada.</div>
       <div>
         <div class="agenda-titulo">Laje de Santos - SP </div>
-        <div class="agenda-descricao">Parque Estadual Marinho de Laje de Santos</div>
+        <div class="agenda-descricao">Parque Estadual Marinho de Laje de Santos</div>     
       </div>
     </div>
     <!-- Modal 2 -->
     <div class="agenda-modal" id="agenda-modal-1">
       <button class="agenda-modal-close" onclick="fecharAgendaModal(1)">×</button>
-      <img src="lajedesantos1.jpg" alt="LAje de Santos - SP" class="agenda-modal-img" onclick="ampliarFoto('lajedesantos1.jpg')">
-      <div class="agenda-modal-titulo">Laje de Santos - SP</div>
+      <div class="laje">
+        <img src="lajedesantos1.jpg" alt="Laje de Santos - SP" class="agenda-modal-img" onclick="ampliarFoto('lajedesantos1.jpg')">
+      </div>
+        <div class="agenda-modal-titulo">Laje de Santos - SP</div>
       <span class="agenda-modal-data"></span>
       <div class="agenda-modal-descricao">
         Um dos melhores pontos de mergulho do litoral Brasileiro, a Laje de Santos esta situada a 42 km da costa, em frete à cidade de Santos, fazendo parte do Parque Estadual Marinho da Laje de Santos, é o primeiro parque marinho dentre as Unidades de Conservação do Estado de São Paulo e tem como objetivo a proteção do ambiente marinho. 
@@ -348,7 +378,7 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
         <div class="agenda-modal-valor">
           Valor: R$ 1.095,00 <br>em até 6x sem juros <br><br> Se necessário, a locação de cada equipamento custa R$ 90,00.
         </div>
-        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero viajar para Laje de Santos por R$ 1.095,00" target="_blank">Reservar pelo WhatsApp</a>
+        <a class="agenda-modal-btn" href="https://wa.me/5511984473691?text=Quero viajar para Laje de Santos por R$ 1.095,00" target="_blank">Reservar pelo WhatsApp</a>
       </div>
     </div>
     <!-- Bloco 3 -->
@@ -395,7 +425,7 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
           <p></p>
           Valor da Ilha Alcatrazes e Ilha Vitória R$ 2.980,00 <br>em até 8x sem juros <br><p></p><br>Valor de Alcatrazes R$ 1.830,00 <br>em até 8x sem juros <br><p></p>Se necessário, a locação de cada equipamento custa R$ 90,00.
         </div>
-        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero o pacote Ilha Alcatrazes e Vitória  por R$ 2.980,00" target="_blank">Reservar pelo WhatsApp</a>
+        <a class="agenda-modal-btn" href="https://wa.me/5511984473691?text=Quero o pacote Ilha Alcatrazes e Vitória  por R$ 2.980,00" target="_blank">Reservar pelo WhatsApp</a>
       </div>
     </div>
     <!-- Bloco 4 -->
@@ -422,7 +452,7 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
         <div class="agenda-modal-valor">
           Valor: R$ 140,00 <br>por sessão (não aluno)
         </div>
-        <a class="agenda-modal-btn" href="https://wa.me/5511999999999?text=Quero agendar o treino de piscina por R$ 140,00" target="_blank">Agendar pelo WhatsApp</a>
+        <a class="agenda-modal-btn" href="https://wa.me/5511984473691?text=Quero agendar o treino de piscina por R$ 140,00" target="_blank">Agendar pelo WhatsApp</a>
       </div>
     </div>
     <!-- LIGHTBOX -->
@@ -458,7 +488,12 @@ A visibilidade da água varia entre 04 e 20 metros, tendo uma média anual de 12
     // Fecha lightbox ao clicar fora da imagem
     document.getElementById('lightbox-modal').addEventListener('click', function(e){
       if(e.target === this){ fecharLightbox(); }
-    });
+    })
   </script>
+  <footer>
+    <div class="rodape">
+        <p class="copy">  &copy; Safe Depth Mergulho 2025 </p>
+    </div>
+  </footer>
 </body>
 </html>

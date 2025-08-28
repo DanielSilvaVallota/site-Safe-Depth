@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Safe Depth Mergulho - Home</title>
+  <title>Home | Safe Depth Mergulho</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -72,9 +72,7 @@
       display: flex;
       justify-content: center;
       list-style: none;
-      background-color: rgba(0, 51, 102, 0.85);
       margin: 0;
-      padding: 8px 0;
       border-radius: 0 0 12px 12px;
     }
     nav ul li {
@@ -87,9 +85,29 @@
       font-size: 16px;
     }
     nav ul li a[aria-current="page"] {
-      border-bottom: 2px solid #00c8ff;
-      padding-bottom: 2px;
     }
+
+    footer {
+      display: flex;
+      height: 50px;
+      text-align: center;
+      justify-content: center;
+      margin-top: 150px;
+      background-color: #fff;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0,153,204,0.19))
+    }
+
+    div.rodape {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  p.copy{
+    color: #fff;
+    margin: auto;
+  }
+
   </style>
 </head>
 <body>
@@ -101,11 +119,11 @@
 </header>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="curso.html">Cursos</a></li>
+      <li><a href="index.html"aria-current="page" >Home</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
       <li><a href="pousada.html">Pousada</a></li>
-      <li><a href="produtos.html">Produtos</a></li>
       <li><a href="Agenda.html">Agenda</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
@@ -113,9 +131,9 @@
   <main class="container">
     <section>
       <h2>Bem-vindo a Safe Depth Mergulho</h2>
-      <p>Seja muito bem-vindo ao universo subaquático! Aqui, o mergulho ganha vida de um jeito descontraído, seguro e inesquecível. Somos uma escola credenciada pela NAUI, referência mundial em qualidade e segurança, e temos orgulho de contar com os melhores instrutores: apaixonados pelo mar, pacientes, experientes e sempre prontos para fazer de cada mergulhador um novo amigo.</p>
-      <p>Nossa estrutura é pensada para quem valoriza conforto e tranquilidade. Oferecemos uma piscina aquecida exclusiva, com um poço de quatro metros de profundidade – perfeita para treinar técnicas e sentir aquela emoção do primeiro mergulho, sempre sob orientação cuidadosa. Do iniciante ao avançado, aqui cada aluno recebe atenção personalizada, equipamentos revisados e muita energia positiva.</p>
-      <p>Prepare-se para aprender no ritmo que você prefere, tirar todas as dúvidas e ter suporte completo desde o primeiro contato até a formação final. Vem viver o mergulho com a gente: conhecimento na superfície, aventura nas profundezas e amizade em cada respirada!</p>
+      <p>Seja muito bem-vindo ao universo subaquático! <br> Aqui, o mergulho ganha vida de um jeito descontraído, seguro e inesquecível. Somos uma escola credenciada pela NAUI, referência mundial em qualidade e segurança, e temos orgulho de contar com os melhores instrutores, apaixonados pelo mar, pacientes, experientes e sempre prontos para fazer de cada mergulhador um novo amigo.</p>
+      <p>Nossa estrutura é pensada para quem valoriza conforto e tranquilidade. Oferecemos uma piscina aquecida exclusiva, com um poço de quatro metros de profundidade, perfeita para treinar técnicas e sentir aquela emoção do primeiro mergulho, sempre sob orientação cuidadosa. Do iniciante ao avançado, aqui cada aluno recebe atenção personalizada, equipamentos revisados e muita energia positiva.</p>
+      <p>Prepare-se para aprender no ritmo que você prefere, tirar todas as dúvidas e ter suporte completo desde o primeiro contato até a formação final. Vem viver o mergulho com a gente, conhecimento na superfície, aventura nas profundezas e amizade em cada respirada!</p>
     </section>
 
     <section>
@@ -145,4 +163,9 @@
     </section>
   </main>
 </body>
+<footer>
+  <div class="rodape">
+      <p class="copy">  &copy; Safe Depth Mergulho 2025 </p>
+  </div>
+</footer>
 </html>

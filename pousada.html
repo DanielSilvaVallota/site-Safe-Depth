@@ -78,10 +78,36 @@
       opacity: 1;
       background: #25d366;
     }
+
+    h2.pousada {
+      margin-bottom: 50px;
+    }
     @media (max-width: 700px) {
       .carrossel-wrapper {max-width: 98vw;}
       .carrossel-imagens img {max-height: 180px;}
     }
+
+    footer {
+      display: flex;
+      height: 50px;
+      text-align: center;
+      justify-content: center;
+      margin-top: 150px;
+      background-color: #fff;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0,153,204,0.19))
+    }
+
+    div.rodape {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  p.copy{
+    color: #fff;
+    margin: auto;
+  }
+
   </style>
 </head>
 <body>
@@ -95,26 +121,28 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
       <li><a href="pousada.html" aria-current="page">Pousada</a></li>
-      <li><a href="produtos.html">Produtos</a></li>
       <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
   <main class="container">
-    <h2>Pousada Recanto dos Lima</h2>
+    <h2 class="pousada">Pousada Recanto dos Lima</h2>
     <!-- Carrossel de imagens -->
     <div class="carrossel-wrapper">
       <button class="carrossel-btn esq" onclick="mudarCarrossel(-1)">&#8249;</button>
       <div class="carrossel-imagens" id="carrosselImagens">
-        <img src="foto1.jpg" alt="Pousada imagem 1">
+        <img src="foto7.jpg" alt="Pousada imagem 7">
         <img src="foto2.jpg" alt="Pousada imagem 2">
         <img src="foto3.jpg" alt="Pousada imagem 3">
         <img src="foto4.jpg" alt="Pousada imagem 4">
         <img src="foto5.jpg" alt="Pousada imagem 5">
         <img src="foto6.jpg" alt="Pousada imagem 6">
-        <img src="foto7.jpg" alt="Pousada imagem 7">
         <img src="foto8.jpg" alt="Pousada imagem 8">
+        <img src="foto1.jpg" alt="Pousada imagem 1">
+
       </div>
       <button class="carrossel-btn dir" onclick="mudarCarrossel(1)">&#8250;</button>
       <div class="carrossel-dots" id="carrosselDots"></div>
@@ -122,7 +150,7 @@
     <p>A Pousada Recanto dos Lima é um lugar para se estar em contato com a natureza e conta com a melhor infraestrutura rústica da ilha: piscina, amplo jardim para a prática de yoga e outras atividades, quadra de volley, sala de jogos, wi-fi, bar, restaurante, churrasqueira, passeios de caiaque e vários quiosques para você reunir sua galera e botar o papo em ordem com uma cervejinha bem gelada.
       Possuímos um Espaço Pet, para a diversão de seu bichinho de pequeno ou médio porte, enquanto você aproveita a viagem!</p>
     <p>Ambientes acolhedores, estrutura completa e localização privilegiada garantem conforto e tranquilidade para o seu descanso entre mergulhos.</p>
-    <p><strong>Reserve já e viva a melhor experiência na Ilha Grande!</strong></p>
+    <p></p>
   </main>
   <script>
     // Carrossel JS
@@ -148,4 +176,9 @@
     mostrarCarrossel(0);
   </script>
 </body>
+<footer>
+  <div class="rodape">
+      <p class="copy">  &copy; Safe Depth Mergulho 2025 </p>
+  </div>
+</footer>
 </html>
