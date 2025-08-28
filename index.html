@@ -167,10 +167,88 @@
         <img src="nadadeira.png" alt="nadadeira" />
         <img src="roupas.png" alt="roupas">
       </div>
-      <div>
-        <p><strong>Depoimentos</strong></p>
-      </div>
-      <p class="final-text">A combinação da estrutura profissional com nossa equipe experiente faz do aprendizado um processo tranquilo, eficiente e muito prazeroso. Venha conhecer de perto!</p>
+      <section class="depoimentos"><br><br>
+        <h2>Depoimentos dos Alunos</h2>
+        <div class="depoimentos-container">
+          <article class="depoimento">
+            <img src="foto-lucas.avif" alt="Lucas Ferreira" class="foto-aluno" />
+            <h3>Sobre o Discovery</h3>
+            <p><strong>Lucas Ferreira:</strong> "O Discovery foi uma experiência transformadora. Aprendi muito sobre autoconhecimento que me ajudaram não só na piscina, mas na vida pessoal também"</p>
+          </article>
+      
+          <article class="depoimento">
+            <img src="foto-ana.jpeg" alt="Ana Paula" class="foto-aluno" />
+            <h3>Ilha Grande</h3>
+            <p><strong>Ana Paula:</strong> "O Pacote de Ilha Grande superou minhas expectativas! A organização foi excelente e as atividades foram muito enriquecedoras, com muita troca entre os alunos"</p>
+          </article>
+      
+          <article class="depoimento">
+            <img src="foto-rafael.avif" alt="Rafael Souza" class="foto-aluno" />
+            <h3>Curso e batismo Ilha Grande</h3>
+            <p><strong>Rafael Souza:</strong> "Participar curso e fazer o batismo em Ilha Grande foi incrível. As experiências práticas e o contato com os instrutores tornaram o aprendizado muito mais divertido e seguro"</p>
+          </article>
+      
+          <article class="depoimento">
+            <img src="foto-clara.jpeg" alt="Clara Mendes" class="foto-aluno" />
+            <h3>viagem de Ilha Grande</h3>
+            <p><strong>Clara Mendes:</strong> "Recomendo o Pacote de Ilha Grande para todos que querem aprender de forma dinâmica e interativa, com uma equipe super qualificada e ambiente acolhedor"</p>
+          </article>
+        </div>
+      </section>
+      
+      <style>
+        .depoimentos-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          justify-content: center;
+        }
+      
+        .depoimento {
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(22, 137, 202, 0.2);
+          padding: 24px;
+          flex: 1 1 calc(50% - 24px);
+          box-sizing: border-box;
+          min-width: 280px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      
+        .foto-aluno {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 16px;
+          box-shadow: 0 2px 8px rgba(22, 137, 202, 0.3);
+        }
+      
+        .depoimento h3 {
+          color: #0a5a8f;
+          margin-bottom: 12px;
+          font-weight: 700;
+          font-size: 1.6rem;
+        }
+      
+        .depoimento p {
+          font-size: 1.1rem;
+          color: #073963;
+          line-height: 1.5;
+          margin: 0;
+        }
+      
+        @media (max-width: 600px) {
+          .depoimento {
+            flex: 1 1 100%;
+          }
+        }
+      </style>
+      
+     <p class="final-text">A combinação da estrutura profissional com nossa equipe experiente faz do aprendizado um processo tranquilo, eficiente e muito prazeroso. Venha conhecer de perto!</p>
     </section>
   </main>
 </body>
